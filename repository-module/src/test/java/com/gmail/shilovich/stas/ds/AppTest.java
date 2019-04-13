@@ -1,4 +1,4 @@
-package com.gmail.shilovich.stas;
+package com.gmail.shilovich.stas.ds;
 
 import static org.junit.Assert.assertTrue;
 
