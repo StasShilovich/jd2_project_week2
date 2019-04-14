@@ -1,6 +1,7 @@
 package com.gmail.shilovich.stas.ds.model;
 
 public class DocumentDTO {
+
     private Long id;
     private String description;
 
