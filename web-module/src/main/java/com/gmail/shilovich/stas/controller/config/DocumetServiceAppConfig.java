@@ -6,7 +6,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ComponentScan(basePackages = {
-        "com.gmail.shilovich.stas.controller.config",
+        "com.gmail.shilovich.stas.controller",
         "com.gmail.shilovich.stas.service",
         "com.gmail.shilovich.stas.repository"})
 @PropertySource("classpath:jdbc.properties")

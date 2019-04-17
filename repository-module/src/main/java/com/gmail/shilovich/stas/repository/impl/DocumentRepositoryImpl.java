@@ -18,15 +18,14 @@ public class DocumentRepositoryImpl implements DocumentRepository {
     private static final Logger logger = LogManager.getLogger(ConnectorHandler.class);
     private static final String ERROR_MESSAGE = "Document repository operation failed";
 
-    @Autowired
     private final ConnectorHandler connectorHandler;
 
+    @Autowired
     public DocumentRepositoryImpl(ConnectorHandler connectorHandler) {
         this.connectorHandler = connectorHandler;
     }
 
     @Override
-
     public Document addDocument(Document document) {
         String sql = "INSERT INTO t_document( f_description, f_unique_number, f_deleted) VALUES(?,?,?)";
         try (PreparedStatement statement = connectorHandler.getConnection().prepareStatement(sql)) {
