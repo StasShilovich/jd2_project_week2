@@ -3,12 +3,11 @@ package com.gmail.shilovich.stas.controller.impl;
 import com.gmail.shilovich.stas.controller.DocumentController;
 import com.gmail.shilovich.stas.repository.DocumentRepository;
 import com.gmail.shilovich.stas.repository.model.Document;
-import com.gmail.shilovich.stas.service.DocumentConverter;
-import com.gmail.shilovich.stas.service.DocumentDTOConverter;
+import com.gmail.shilovich.stas.service.converter.DocumentConverter;
+import com.gmail.shilovich.stas.service.converter.DocumentDTOConverter;
 import com.gmail.shilovich.stas.service.model.DocumentDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 
 @Controller
 public class DocumentControllerImpl implements DocumentController {
@@ -33,11 +32,13 @@ public class DocumentControllerImpl implements DocumentController {
 
     @Override
     public DocumentDTO getDocumentById(Long id) {
-        return null;
+        Document document = documentRepository.getDocument(id);
+        DocumentDTO documentDTO = documentConverter.toDTO(document);
+        return documentDTO;
     }
 
     @Override
     public void delete(Long id) {
-
+        documentRepository.deleteDocument(id);
     }
 }

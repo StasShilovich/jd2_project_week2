@@ -13,5 +13,7 @@ public class App {
         context.refresh();
         DocumentController documentController = context.getBean(DocumentController.class);
         documentController.add(new DocumentDTO(1l, "3232","12312312312312-23"));
+//        documentController.delete(3l);
+
     }
 }
