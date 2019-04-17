@@ -42,7 +42,7 @@
                         <archive>
                             <manifest>
                                 <addClasspath>true</addClasspath>
-                                <mainClass>com.gmail.shilovich.stas.ds.app.App</mainClass>
+                                <mainClass>com.gmail.shilovich.stas.controller.app.App</mainClass>
                             </manifest>
                         </archive>
                     </configuration>

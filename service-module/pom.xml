@@ -36,7 +36,7 @@
                         <archive>
                             <manifest>
                                 <addClasspath>true</addClasspath>
-                                <mainClass>com.gmail.shilovich.stas.ds.App</mainClass>
+                                <mainClass>com.gmail.shilovich.stas.repository.App</mainClass>
                             </manifest>
                         </archive>
                     </configuration>
