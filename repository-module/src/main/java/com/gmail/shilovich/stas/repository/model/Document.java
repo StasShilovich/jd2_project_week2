@@ -2,15 +2,18 @@ package com.gmail.shilovich.stas.repository.model;
 
 public class Document {
     private Long id;
-    private String unique_numver;
+    private String unique_number;
     private String description;
     private boolean deleted;
 
     public Document(Long id, String unique_numver, String description, boolean deleted) {
         this.id = id;
-        this.unique_numver = unique_numver;
+        this.unique_number = unique_numver;
         this.description = description;
         this.deleted = deleted;
+    }
+
+    public Document() {
     }
 
     public Long getId() {
@@ -21,12 +24,12 @@ public class Document {
         this.id = id;
     }
 
-    public String getUnique_numver() {
-        return unique_numver;
+    public String getUnique_number() {
+        return unique_number;
     }
 
-    public void setUnique_numver(String unique_numver) {
-        this.unique_numver = unique_numver;
+    public void setUnique_number(String unique_number) {
+        this.unique_number = unique_number;
     }
 
     public String getDescription() {

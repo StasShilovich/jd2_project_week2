@@ -11,6 +11,10 @@ public class DocumentDTOConverterImpl implements DocumentDTOConverter {
 
     @Override
     public Document fromDTO(DocumentDTO dto) {
-        return null;
+        Document document = new Document();
+        document.setId(dto.getId());
+        document.setDescription(dto.getDescription());
+        document.setUnique_number(dto.getUnique_number());
+        return document;
     }
 }

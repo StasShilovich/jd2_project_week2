@@ -28,22 +28,21 @@ public class DocumentRepositoryImpl implements DocumentRepository {
     @Override
 
     public Document addDocument(Document document) {
-        String sql = "INSERT INTO t_document(f_id, f_description, f_unique_number, f_deleted) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO t_document( f_description, f_unique_number, f_deleted) VALUES(?,?,?)";
         try (PreparedStatement statement = connectorHandler.getConnection().prepareStatement(sql)) {
-            statement.setString(1, document.getId().toString());
-            statement.setString(2, document.getDescription());
+            statement.setString(1, document.getDescription());
             String uuid;
-            if (document.getUnique_numver().isEmpty()) {
+            if (document.getUnique_number().isEmpty()) {
                 uuid = UUID.randomUUID().toString();
             } else {
-                uuid = document.getUnique_numver();
+                uuid = document.getUnique_number();
             }
-            statement.setString(3, uuid);
+            statement.setString(2, uuid);
             int deleted = 0;
             if (document.isDeleted()) {
                 deleted = 1;
             }
-            statement.setString(5, String.valueOf(deleted));
+            statement.setString(3, String.valueOf(deleted));
             int rows = statement.executeUpdate();
             if (rows == 0) {
                 throw new DatabaseException("No rows affected");

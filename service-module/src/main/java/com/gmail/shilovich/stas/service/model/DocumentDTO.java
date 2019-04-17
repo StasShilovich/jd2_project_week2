@@ -4,10 +4,15 @@ public class DocumentDTO {
 
     private Long id;
     private String description;
+    private String unique_number;
 
-    public DocumentDTO(Long id, String description) {
+    public DocumentDTO() {
+    }
+
+    public DocumentDTO(Long id, String description, String unique_number) {
         this.id = id;
         this.description = description;
+        this.unique_number = unique_number;
     }
 
     public Long getId() {
@@ -24,5 +29,13 @@ public class DocumentDTO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getUnique_number() {
+        return unique_number;
+    }
+
+    public void setUnique_number(String unique_number) {
+        this.unique_number = unique_number;
     }
 }
